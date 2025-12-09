@@ -4,28 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Login - Expense Tracker</title>
+    <title>Register - Expense Tracker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="wrap">
-        <h1>Login</h1>
-        <form id="login-form">
+        <h1>Register</h1>
+        <form id="register-form">
+            <input type="text" placeholder="Username" name="username" required>
             <input type="email" placeholder="Email" name="email" required>
             <input type="password" placeholder="Password" name="password" required>
-
-            <button type="submit">Login</button>
+            <button type="submit">Register</button>
         </form>
-        <p>Don't have an account? <a href="register.html">Register</a></p>
+        <p>Already have an account? <a href="index.html">Login</a></p>
         <script>
-            const form = document.querySelector('#login-form');
+            const form = document.querySelector('#register-form');
             form.addEventListener('submit', async e => {
                 e.preventDefault();
                 const data = new FormData(form);
-                const res = await fetch('api/login.php', { method: 'POST', body: data });
+                const res = await fetch('api/register.php', { method: 'POST', body: data });
                 const json = await res.json();
-                if (json.status === 'success') window.location = 'dashboard.html';
+                if (json.status === 'success') window.location = 'index.html';
                 else alert(json.message);
             });
         </script>

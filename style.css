@@ -18,7 +18,7 @@ body {
     background: linear-gradient(180deg, var(--bg), #eef2ff);
     min-height: 100vh;
     color: #0f172a
-}
+}script
 
 .wrap {
     max-width: 900px;
